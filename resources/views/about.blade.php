@@ -1,7 +1,7 @@
 @extends('layout.main')
 @push('title')
-    <title>Home</title>
+    <title>About</title>
 @endpush
 @section('main-section')
-<h1>Home page</h1>
+<h1>About page</h1>
 @endsection
