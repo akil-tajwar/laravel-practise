@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>Conditional Logic</h1>
     <h1>Welcome {{$name ?? 'Guest'}}</h1>
     @if($name == '')
         {{'name is empty'}}

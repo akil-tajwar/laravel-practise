@@ -16,14 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
-Route::get('/demo', function(){
-    return view('demo');
+Route::get('/loop', function(){
+    return view('loop');
 });
 // Route::get('/demo2/{name}/{id?}', function($name, $id=null){
 //     echo $name;
 //     echo $id;
 // });
-Route::get('/demo2/{name?}/{id?}', function($name, $id=null){
+Route::get('/conditional/{name?}/{id?}', function($name, $id=null){
     $data=compact('name', 'id');
-    return view('demo2')->with($data);
+    return view('conditional')->with($data);
 });
