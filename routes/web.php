@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DemoController;
+use App\Http\Controllers\PhotoController;
+use App\Http\Controllers\SingleActionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,12 +16,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-Route::get('/about', function(){
-    return view('about');
-});
+//recommended
+Route::get('/', [DemoController::class, 'home']);
+Route::get('/about', [DemoController::class,'about']);
+Route::get('/courses', SingleActionController::class);
+Route::resource('photo', PhotoController::class);
+
+//not recommended
 Route::get('/loop', function(){
     return view('loop');
 });
