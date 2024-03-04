@@ -23,7 +23,7 @@ Route::get('/demo', function(){
 //     echo $name;
 //     echo $id;
 // });
-Route::get('/demo2/{name}/{id?}', function($name, $id=null){
+Route::get('/demo2/{name?}/{id?}', function($name, $id=null){
     $data=compact('name', 'id');
     return view('demo2')->with($data);
 });
