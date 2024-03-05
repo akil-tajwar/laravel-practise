@@ -11,42 +11,10 @@
     <h1>Registration Page</h1>
     <form action="{{url('/')}}/register" method="post">
         @csrf
-        <div>
-            <label for="">Name</label><br>
-            <input type="text" name="name" value="{{old('name')}}">
-            <div>
-                @error('name')
-                    {{$message}}
-                @enderror
-            </div>
-        </div>
-        <div>
-            <label for="">Email</label><br>
-            <input type="email" name="email" value="{{old('email')}}">
-            <div>
-                @error('email')
-                    {{$message}}
-                @enderror
-            </div>
-        </div>
-        <div>
-            <label for="">Password</label><br>
-            <input type="password" name="password">
-            <div>
-                @error('password')
-                    {{$message}}
-                @enderror
-            </div>
-        </div>
-        <div>
-            <label for="">Confirm Password</label><br>
-            <input type="password" name="password_confirmation">
-            <div>
-                @error('password_confirmation')
-                    {{$message}}
-                @enderror
-            </div>
-        </div>
+        <x-input type='text' name='name' label ='Name'/>
+        <x-input type='email' name='email' label ='Email'/>
+        <x-input type='password' name='password' label ='Password'/>
+        <x-input type='password' name='password' label ='Confirm password'/>
         <button>Submit</button>
     </form>
 </body>
