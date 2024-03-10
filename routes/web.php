@@ -5,6 +5,7 @@ use App\Http\Controllers\DemoController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\SingleActionController;
 use App\Http\Controllers\RegistratonController;
+use App\Models\Customer;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,11 @@ Route::get('/loop', function(){
 Route::get('/conditional/{name?}/{id?}', function($name, $id=null){
     $data=compact('name', 'id');
     return view('conditional')->with($data);
+});
+Route::get('/customer', function(){
+    $customers = Customer::all();
+    echo "<pre>";
+    print_r($customers->toArray());
 });
 // Route::get('/demo2/{name}/{id?}', function($name, $id=null){
 //     echo $name;
