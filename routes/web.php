@@ -28,6 +28,7 @@ Route::get('/register', [RegistratonController::class,'index']);
 Route::post('/register', [RegistratonController::class,'register']);
 Route::get('/form2', [Form2Controller::class, 'index']);
 Route::post('/form2', [Form2Controller::class, 'store']);
+Route::get('/form2/view', [Form2Controller::class, 'view']);
 
 //not recommended
 Route::get('/loop', function(){

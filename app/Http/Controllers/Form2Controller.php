@@ -24,5 +24,12 @@ class Form2Controller extends Controller
         $customer->birthDate = $request['birthDate'];
         $customer->password = md5($request['password']);
         $customer->save();
+
+        return redirect('/form2/view');
+    }
+    public function view(){
+        $customers = Customer::all();
+        $data = compact('customers');
+        return view('customer-view')->with($data);
     }
 }
