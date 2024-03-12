@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <h1>Registration Page</h1>
+    <h1>Registration Page1</h1>
     <form action="{{url('/')}}/register" method="post">
         @csrf
         <x-input type='text' name='name' label ='Name'/>

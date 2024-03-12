@@ -20,7 +20,7 @@ return new class extends Migration
             $table->date('birthDate')->nullable(); //if user don't want to share this info
             $table->string('password');
             $table->boolean('status')->default(1); //default value will be 1
-            $table->integer('points');
+            $table->integer('points')->default(0);
             $table->timestamps();
             //php artisan make:migration add_columns_to_customers_table (to add new columns)
         });

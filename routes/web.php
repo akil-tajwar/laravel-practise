@@ -5,6 +5,7 @@ use App\Http\Controllers\DemoController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\SingleActionController;
 use App\Http\Controllers\RegistratonController;
+use App\Http\Controllers\Form2Controller;
 use App\Models\Customer;
 
 /*
@@ -25,6 +26,8 @@ Route::get('/courses', SingleActionController::class);
 Route::resource('photo', PhotoController::class);
 Route::get('/register', [RegistratonController::class,'index']);
 Route::post('/register', [RegistratonController::class,'register']);
+Route::get('/form2', [Form2Controller::class, 'index']);
+Route::post('/form2', [Form2Controller::class, 'store']);
 
 //not recommended
 Route::get('/loop', function(){
