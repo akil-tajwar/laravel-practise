@@ -7,6 +7,7 @@ use App\Http\Controllers\SingleActionController;
 use App\Http\Controllers\RegistratonController;
 use App\Http\Controllers\Form2Controller;
 use App\Models\Customer;
+use App\Http\Controllers\HyperlinkController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,7 @@ Route::post('/register', [RegistratonController::class,'register']);
 Route::get('/form2', [Form2Controller::class, 'index']);
 Route::post('/form2', [Form2Controller::class, 'store']);
 Route::get('/form2/view', [Form2Controller::class, 'view']);
+Route::get('/hyperlink', [HyperlinkController::class, 'index']);
 
 //not recommended
 Route::get('/loop', function(){
