@@ -44,17 +44,17 @@
                         <td>{{ $customer->country }}</td>
                         <td>{{ $customer->birthDate }}</td>
                         <td>
-                            <button>
-                                @if ($customer->status === '1')
-                                    Active
-                                @else
-                                    Inactive
-                                @endif
-                            </button>
+                            @if ($customer->status === '1')
+                                Active
+                            @else
+                                Inactive
+                            @endif
                         </td>
                         <td>
-                            <button>Edit</button>
-                            <a href="{{url('/form2/view/delete')}}/{{$customer->id}}">
+                            <a href="{{ url('/form2/view/edit') }}/{{ $customer->id }}">
+                                <button>Edit</button>
+                            </a>
+                            <a href="{{ url('/form2/view/delete') }}/{{ $customer->id }}">
                                 <button>Delete</button>
                             </a>
                         </td>
