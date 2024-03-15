@@ -11,4 +11,12 @@ class Customer extends Model
     use HasFactory;
     protected $table = 'customers';
     protected $primaryKey = 'id';
+
+    //to capitalize database data
+    public function setNameAttribute($value){
+        $this->attributes['name'] = ucwords($value); //for "name"
+    }
+    // public function setUserNameAttribute($value){
+    //     $this->attributes['user_name'] = ucwords($value); //for "user_name"
+    // }
 }
