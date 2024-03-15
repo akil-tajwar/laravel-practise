@@ -32,7 +32,7 @@ Route::post('/form2', [Form2Controller::class, 'store']);
 Route::get('/form2/view', [Form2Controller::class, 'view']);
 Route::get('/form2/view/delete/{id}', [Form2Controller::class, 'delete']);
 Route::get('/form2/view/edit/{id}', [Form2Controller::class, 'edit']);
-Route::put('/form2/view/update/{id}', [Form2Controller::class, 'update']);
+Route::post('/form2/view/update/{id}', [Form2Controller::class, 'update']);
 Route::get('/hyperlink', [HyperlinkController::class, 'index']);
 
 //not recommended

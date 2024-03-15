@@ -11,7 +11,7 @@ class Form2Controller extends Controller
     {
         $url = url('/form2');
         $title = 'Customer Registration';
-        $data = compact('url', 'title');
+        $data = compact('url', 'title', 'url');
         return view('form2', $data);
     }
     public function store(Request $request)
@@ -50,8 +50,8 @@ class Form2Controller extends Controller
             //found
             $title = 'Update Customer';
             $url = url('/form2/view/update') . '/' . $id;
-            $data = compact('customer', 'title');
-            return view('form2')->with($data, $customer);
+            $data = compact('customer', 'title', 'url');
+            return view('form2')->with($data);
         } else {
             //not found
             return redirect('/form2/view');

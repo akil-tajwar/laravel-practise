@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <form action="{{ url('/') }}/form2" method="POST">
+    <form action="{{ $url }}" method="POST">
         @csrf
         <h1>{{ $title }}</h1>
         <input type="text" name="name" placeholder="Name" value="{{$customer->name}}"/><br>
