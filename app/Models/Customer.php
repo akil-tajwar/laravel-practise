@@ -4,11 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Customer extends Model
 {
     //php artisan make:model table_name
     use HasFactory;
+    use SoftDeletes;
     protected $table = 'customers';
     protected $primaryKey = 'id';
 

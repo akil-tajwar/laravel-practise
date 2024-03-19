@@ -10,10 +10,10 @@
 
 <body>
     <div class="table-responsive">
-        <a href="{{url('form2/trash')}}">
-            <button>Go To Trash</button>
-        </a>
         <table class="table table-primary">
+            <a href="{{url('form2/view')}}">
+                <button>Customers</button>
+            </a>
             {{-- {{print_r($customers)}} --}}
             <thead>
                 <tr>
@@ -54,11 +54,11 @@
                             @endif
                         </td>
                         <td>
-                            <a href="{{ url('/form2/view/edit') }}/{{ $customer->id }}">
-                                <button>Edit</button>
+                            <a href="{{ url('/form2/view/restore') }}/{{ $customer->id }}">
+                                <button>Restore</button>
                             </a>
-                            <a href="{{ url('/form2/view/delete') }}/{{ $customer->id }}">
-                                <button>Trash</button>
+                            <a href="{{ url('/form2/view/force-delete') }}/{{ $customer->id }}">
+                                <button>Delete</button>
                             </a>
                         </td>
                     </tr>

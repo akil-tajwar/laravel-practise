@@ -38,9 +38,24 @@ class Form2Controller extends Controller
         $data = compact('customers');
         return view('customer-view')->with($data);
     }
+    public function trash(){
+        $customers = Customer::onlyTrashed()->get();
+        $data = compact('customers');
+        return view('customer-trash')->with($data);
+    }
     public function delete($id)
     {
         Customer::find($id)->delete();
+        return redirect()->back();
+    }
+    public function forceDelete($id)
+    {
+        Customer::withTrashed()->find($id)->forceDelete();
+        return redirect()->back();
+    }
+    public function restore($id)
+    {
+        Customer::withTrashed()->find($id)->restore();
         return redirect()->back();
     }
     public function edit($id)
