@@ -11,8 +11,15 @@
 <body>
     <div class="table-responsive">
         <a href="{{url('form2/trash')}}">
-            <button>Go To Trash</button>
+            <button>Go To Trash</button><br>
         </a>
+        <form action="">
+            <input type="search" name="search" placeholder="Search here" value="{{$search}}">
+            <button>Search</button>
+            <a href="{{url('/form2/view')}}">
+                <button type="button">Reset</button>
+            </a>
+        </form>
         <table class="table table-primary">
             {{-- {{print_r($customers)}} --}}
             <thead>

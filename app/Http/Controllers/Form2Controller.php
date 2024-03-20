@@ -32,10 +32,16 @@ class Form2Controller extends Controller
 
         return redirect('/form2/view');
     }
-    public function view()
+    public function view(Request $request)
     {
-        $customers = Customer::all();
-        $data = compact('customers');
+        $search = $request['search'] ?? '';
+        if($search == ''){
+            $customers = Customer::all();
+        }
+        else{
+            $customers = Customer::where('name', 'LIKE', "$search%")->orWhere('address', 'LIKE', "%$search%")->get();
+        }
+        $data = compact('customers', 'search');
         return view('customer-view')->with($data);
     }
     public function trash(){
